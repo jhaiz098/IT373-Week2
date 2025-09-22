@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+    <h1>Announcement</h1>
+    <h2>Welcome! This is the announcement list page.</h2>
+
+    <ol>
+        {% for announcement in announcements  %}
+            <li><a href="/announcements_detail/{{ announcement.id }}/">{{announcement.title}}</a></li>
+        {% endfor %}    
+    </ol>
+{% endblock content %}

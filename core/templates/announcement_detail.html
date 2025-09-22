@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}{{ announcement.title }}{% endblock title %}
+
+{% block content %}
+    <h1>{{ announcements.title }}</h1>
+    <p id="content" class="collapsed">{{ announcements.content }}</p>
+    <button id="toggleBtn">Read more</button>
+    <br><br>
+    <a href="{% url 'announcements_list' %}">Back to all announcements</a>
+
+    <style>
+        #content {
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        /* Collapsed state */
+        .collapsed {
+            max-height: 80px; /* Show only part of the content */
+        }
+        /* Expanded state */
+        .expanded {
+            max-height: 1000px; /* Large enough to show all */
+        }
+    </style>
+
+    <script>
+        const content = document.getElementById("content");
+        const toggleBtn = document.getElementById("toggleBtn");
+
+        toggleBtn.addEventListener("click", function() {
+            if (content.classList.contains("collapsed")) {
+                content.classList.remove("collapsed");
+                content.classList.add("expanded");
+                toggleBtn.textContent = "Show less";
+            } else {
+                content.classList.remove("expanded");
+                content.classList.add("collapsed");
+                toggleBtn.textContent = "Read more";
+            }
+        });
+    </script>
+
+    
+{% endblock content %}

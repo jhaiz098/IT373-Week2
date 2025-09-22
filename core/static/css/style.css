@@ -1,0 +1,15 @@
+body {
+    padding: 50px;
+    margin:0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: left;
+}
+#content {
+    width:500px;
+    word-spacing: 8px;
+    text-align: justify;
+}
