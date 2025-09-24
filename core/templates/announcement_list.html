@@ -8,7 +8,7 @@
 
     <ol>
         {% for announcement in announcements  %}
-            <li><a href="/announcements_detail/{{ announcement.id }}/">{{announcement.title}}</a></li>
+            <li><a href="/announcements/{{ announcement.id }}/">{{announcement.title}}</a></li>
         {% endfor %}    
     </ol>
 {% endblock content %}
